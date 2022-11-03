@@ -5028,6 +5028,13 @@ components:
       properties:
         aggregation_type:
           $ref: '#/components/schemas/LogsMetricComputeAggregationType'
+        include_percentiles:
+          description: 'Toggle to include or exclude percentile aggregations for distribution
+            metrics.
+
+            Only present when the `metric_type` is `distribution`.'
+          example: true
+          type: boolean
         path:
           description: The path to the value the log-based metric will aggregate on
             (only used if the aggregation type is a "distribution").
@@ -5137,6 +5144,13 @@ components:
       properties:
         aggregation_type:
           $ref: '#/components/schemas/LogsMetricResponseComputeAggregationType'
+        include_percentiles:
+          description: 'Toggle to include or exclude percentile aggregations for distribution
+            metrics.
+
+            Only present when the `metric_type` is `distribution`.'
+          example: true
+          type: boolean
         path:
           description: The path to the value the log-based metric will aggregate on
             (only used if the aggregation type is a "distribution").
@@ -5198,6 +5212,8 @@ components:
     LogsMetricUpdateAttributes:
       description: The log-based metric properties that will be updated.
       properties:
+        compute:
+          $ref: '#/components/schemas/LogsMetricCompute'
         filter:
           $ref: '#/components/schemas/LogsMetricFilter'
         group_by:
@@ -6003,7 +6019,7 @@ components:
           format: date-time
           type: string
         include_percentiles:
-          description: 'Toggle to turn on/off percentile aggregations for distribution
+          description: 'Toggle to include or exclude percentile aggregations for distribution
             metrics.
 
             Only present when the `metric_type` is `distribution`.'
