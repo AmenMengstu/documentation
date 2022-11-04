@@ -115,7 +115,7 @@ This check monitors the number of bytes a host has swapped in and out.
 
 The system swap check is included in the [Datadog Agent][4] package. No additional installation is needed on your server.
 
-#### Configuration
+#### Configurations
 
 1. Edit the `system_swap.d/conf.yaml` file in the `conf.d/` folder at the root of your [Agent's configuration directory][5]. See the [sample system_swap.d/conf.yaml][8] for all available configuration options. **Note**: This check takes no initial configuration.
 
